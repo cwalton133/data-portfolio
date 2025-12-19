@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charles Akintola Walton's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #F5F5DC;
+            /* Warm Beige for a neutral base */
+            color: #006666;
+            /* Primary Teal for text */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 102, 102, 0.95);
+            /* semi-transparent Deep Teal */
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid #FF6F61;
+            /* Coral */
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FF6F61;
+            /* Coral for logo */
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+         .nav-links a {
+        color: #FF6F61 /* Dark Teal for high contrast */
+        }
+        .nav-links a:hover {
+        color: #A8E6CF; /* Pale Mint on hover for contrast */
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #A8E6CF;
+            /* Pale Mint underline on hover */
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #FF6F61;
+            /* Coral */
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            line-height: 1;
+            max-width: 100%;
+            background: linear-gradient(135deg, #006666, #A8E6CF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text h2 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: #FF6F61;
+            /* Vibrant Coral for emphasis */
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #333;
+            /* dark for readability */
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #FF6F61, #A8E6CF);
+            color: #fff;
+            /* White text */
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 111, 97, 0.3);
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: clamp(200px, 30vw, 300px);
+            height: clamp(200px, 30vw, 300px);
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(166, 230, 207, 0.3);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section.alt {
+            background: #F5F5DC;
+            /* Warm Beige for contrast */
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 3rem;
+            color: #FF6F61;
+            /* Vibrant Coral for section titles */
+        }
+
+        /* About Content */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: rgba(166, 230, 207, 0.1);
+            padding: 1.5rem 1rem;
+            border-radius: 10px;
+            border: 1px solid #A8E6CF;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            background: rgba(166, 230, 207, 0.2);
+            box-shadow: 0 10px 25px rgba(166, 230, 207, 0.3);
+        }
+
+        .skill-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .skill-item p {
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .project-category-card {
+            background: rgba(0, 102, 102, 0.7);
+            border: 1px solid #A8E6CF;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-category-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(166, 230, 207, 0.2);
+            border-color: #FF6F61;
+            /* Coral on hover */
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .project-category-card:hover .category-icon {
+            filter: grayscale(0%);
+        }
+
+        .project-category-card h3 {
+            color: #FF6F61;
+            /* Coral */
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .project-category-card p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .category-count {
+            background: rgba(255, 111, 97, 0.2);
+            color: #FF6F61;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* Resume Styles */
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #F5F5DC;
+            /* Warm Beige background for contrast */
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid #A8E6CF;
+            box-shadow: 0 20px 40px rgba(166, 230, 207, 0.1);
+        }
+
+        .resume-section {
+            margin-bottom: 3rem;
+        }
+
+        .resume-section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            color: #FF6F61;
+            /* Coral for section titles */
+            border-bottom: 2px solid #A8E6CF;
+            /* Pale Mint for contrast */
+            padding-bottom: 0.5rem;
+        }
+
+        /* Job & Education Entries */
+        .job-entry,
+        .education-entry {
+            display: flex;
+            margin-bottom: 2rem;
+            background: rgba(166, 230, 207, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(166, 230, 207, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .job-entry:hover,
+        .education-entry:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(166, 230, 207, 0.2);
+            border-color: #FF6F61;
+            /* Coral hover */
+        }
+
+        .job-left,
+        .education-left {
+            width: 250px;
+            padding-right: 2rem;
+            flex-shrink: 0;
+        }
+
+        .job-right,
+        .education-right {
+            flex: 1;
+            padding-left: 2rem;
+            border-left: 2px solid #A8E6CF;
+            /* Pale Mint */
+            position: relative;
+        }
+
+        .job-right::before,
+        .education-right::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(135deg, #FF6F61, #A8E6CF);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+        }
+
+        .company,
+        .school {
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: #FF6F61;
+            letter-spacing: 1px;
+        }
+
+        .location,
+        .school-location {
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .dates,
+        .graduation-year {
+            font-size: 0.9rem;
+            color: #FF6F61;
+            background: rgba(255, 111, 97, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .job-title,
+        .degree {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .job-description,
+        .degree-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .job-description ul,
+        .degree-description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-description li,
+        .degree-description li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .job-description li::before,
+        .degree-description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #FF6F61;
+            font-weight: bold;
+        }
+
+        /* Languages */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .language-item {
+            background: rgba(166, 230, 207, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid #A8E6CF;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .language-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(166, 230, 207, 0.2);
+            border-color: #FF6F61;
+            /* Coral on hover */
+        }
+
+        .language-name {
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #FF6F61;
+            letter-spacing: 1px;
+        }
+
+        .proficiency-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+        }
+
+        .proficiency-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #FF6F61, #A8E6CF);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .proficiency-label {
+            font-size: 0.8rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Contact Styles */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(166, 230, 207, 0.1);
+            border-radius: 10px;
+            border: 1px solid #A8E6CF;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(166, 230, 207, 0.2);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: #FF6F61;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            background: #fff;
+            /* Light background for inputs for clarity */
+            border: 1px solid #A8E6CF;
+            border-radius: 8px;
+            color: #006666;
+            /* Teal text for readability */
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FF6F61;
+            /* Coral focus */
+            box-shadow: 0 0 10px rgba(255, 111, 97, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #006666;
+            /* Deep Teal footer for consistency */
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid #FF6F61;
+            /* Coral border top */
+            color: #fff;
+            /* White text for contrast */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 102, 102, 0.95);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero-content,
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .job-entry,
+            .education-entry {
+                flex-direction: column;
+            }
+
+            .job-left,
+            .education-left {
+                width: 100%;
+                padding-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .job-right,
+            .education-right {
+                padding-left: 0;
+                border-left: none;
+                border-top: 2px solid #A8E6CF;
+                /* Pale Mint */
+                padding-top: 1rem;
+            }
+
+            .job-right::before,
+            .education-right::before {
+                display: none;
+            }
+
+            .resume-container {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: slideIn 0.8s ease-out;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FF6F61;
+            /* Coral particles for visibility */
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">PAK</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-text">
+                    <h1>Charles Akintola WALTON</h1>
+                    <h2>Aspiring Data Analyst with 8+ Years of Banking and Marketing Experience | Skilled in Data
+                        Visualization, Excel, and Strategic Communication</h2>
+                    <p> With over 8 years of experience as a Relationship Banking Officer, I bring a unique blend of
+                        financial expertise, client
+                        relationship management, and a passion for data-driven decision making. Transitioning into data
+                        analysis, I have
+                        developed strong skills in Excel spreadsheet mastery, data visualization, and creating impactful
+                        PowerPoint
+                        presentations that communicate complex insights clearly and effectively.
+
+                    <p>
+                        My background in banking and marketing has honed my analytical thinking, attention to detail,
+                        and ability to translate
+                        data into actionable strategies. Eager to leverage these skills in the world of data analysis, I
+                        am committed to
+                        delivering valuable insights that support informed business decisions. Let’s connect and explore
+                        how I can contribute to
+                        your data-driven initiatives!.</p>
+
+                    <a href="#projects" class="cta-button">See My Work</a>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-image">
+                        <img src="ST859988.jpg" alt="Princilla's Photo" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Floating particles -->
+        <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="top: 60%; left: 80%; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 80%; left: 20%; animation-delay: 4s;"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section alt">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div>
+                    <p>With a passion for uncovering hidden patterns in data, I bring a unique blend of analytical rigor
+                        and creative problem-solving to every project. My expertise spans across various industries,
+                        helping businesses in Ghana and beyond leverage their data for competitive advantage.</p>
+                    <br />
+                    <p>I believe that every dataset tells a story, and my mission is to help organizations discover and
+                        act upon those stories to drive meaningful outcomes.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h3>Python & R</h3>
+                        <p>Advanced Analytics</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>SQL & NoSQL</h3>
+                        <p>Database Management</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Tableau & Power BI</h3>
+                        <p>Data Visualization</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Machine Learning</h3>
+                        <p>Predictive Modeling</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Excel & Google Sheets</h3>
+                        <p>Business Intelligence</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Statistical Analysis</h3>
+                        <p>Research & Insights</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">All My Data Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-category-card">
+                    <div class="category-icon">🐍</div>
+                    <h3>Python & R</h3>
+                    <p>Advanced Analytics</p>
+                    <div class="category-count">4 Projects</div>
+                </div>
+
+                <div class="project-category-card">
+                    <div class="category-icon">🗄️</div>
+                    <h3>SQL & NoSQL</h3>
+                    <p>Database Management</p>
+                    <div class="category-count">4 Projects</div>
+                </div>
+
+                <div class="project-category-card">
+                    <div class="category-icon">📊</div>
+                    <h3>Tableau & Power BI</h3>
+                    <p>Data Visualization</p>
+                    <div class="category-count">6 Projects</div>
+                </div>
+
+                <div class="project-category-card">
+                    <div class="category-icon">🤖</div>
+                    <h3>Machine Learning</h3>
+                    <p>Predictive Modeling</p>
+                    <div class="category-count">4 Projects</div>
+                </div>
+
+                <div class="project-category-card">
+                    <div class="category-icon">📈</div>
+                    <h3>Excel & Google Sheets</h3>
+                    <p>Business Intelligence</p>
+                    <div class="category-count">3 Projects</div>
+                </div>
+
+                <div class="project-category-card">
+                    <div class="category-icon">📉</div>
+                    <h3>Statistical Analysis</h3>
+                    <p>Research & Insights</p>
+                    <div class="category-count">4 Projects</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section alt">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <div class="resume-container">
+                <!-- Work Experience -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">Work Experience</h3>
+                    <!-- Example Job -->
+                    <div class="job-entry">
+                        <div class="job-left">
+                            <div class="company">Data in Action Africa</div>
+                            <div class="location">Accra, Ghana</div>
+                            <div class="dates">Jan 2022 - Present</div>
+                        </div>
+                        <div class="job-right">
+                            <div class="job-title">Founder & Lead Data Analyst</div>
+                            <div class="job-description">
+                                <ul>
+                                    <li>Founded and led data analytics consultancy serving 20+ clients across West
+                                        Africa</li>
+                                    <li>Developed custom analytics solutions resulting in average 25% efficiency
+                                        improvement for clients</li>
+                                    <li>Conducted training workshops for 200+ professionals in data analysis and
+                                        visualization</li>
+                                    <li>Built predictive models that helped clients reduce operational costs by up to
+                                        30%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional jobs omitted for brevity -->
+                </div>
+                <!-- Education and other sections follow similarly -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p>princilla@datainactionafrica.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <div>
+                            <strong>Location</strong>
+                            <p>Accra, Ghana</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>💼</span>
+                        <div>
+                            <strong>LinkedIn</strong>
+                            <p>linkedin.com/in/princilla-koranteng</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>🐙</span>
+                        <div>
+                            <strong>GitHub</strong>
+                            <p>github.com/princilla-koranteng</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Princilla Abena Koranteng. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('show');
+            });
+        });
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.section, .skill-item, .project-category-card, .job-entry, .education-entry').forEach(el => {
+            observer.observe(el);
+        });
+        document.querySelector('.contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
