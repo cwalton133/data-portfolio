@@ -10,18 +10,14 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-             }
-            p, li {
-            font-weight: 600;
-            color: #f1f1f1;
         }
-
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #1e2f2f;
-            /* Dark Slate Blue as base background */
-            color: #ffffff;
+            background: #E0E0E0;
+            /* Light Gray background for neutrality */
+            color: #003366;
+            /* Primary color for text */
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -34,15 +30,17 @@
 
         /* Header & Navigation */
         .header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: #000000; /* TRUE BLACK */
-        z-index: 1000;
-        padding: 1.2rem 0;
-        border-bottom: 2px solid #FFD700; /* Gold accent */
-    }
-
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 51, 102, 0.95);
+            /* semi-transparent Navy Blue */
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid #FF6600;
+            /* Bright Orange */
+        }
 
         .nav {
             display: flex;
@@ -53,8 +51,8 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #FFD700;
-            /* Soft Gold */
+            color: #FF6600;
+            /* Bright Orange for logo */
         }
 
         .nav-links {
@@ -64,7 +62,8 @@
         }
 
         .nav-links a {
-            color: #ffffff;
+            color: #FF6600;
+            /* Navy Blue for links */
             text-decoration: none;
             transition: all 0.3s ease;
             position: relative;
@@ -72,8 +71,8 @@
         }
 
         .nav-links a:hover {
-            color: #99CC33;
-            /* Lime Green on hover */
+            color: #66CCFF;
+            /* Soft Sky Blue on hover */
         }
 
         .nav-links a::after {
@@ -83,7 +82,8 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #99CC33;
+            background: #66CCFF;
+            /* Soft Sky Blue underline on hover */
             transition: width 0.3s ease;
         }
 
@@ -102,7 +102,8 @@
         .menu-toggle span {
             width: 25px;
             height: 3px;
-            background: #99CC33;
+            background: #FF6600;
+            /* Bright Orange */
             transition: all 0.3s ease;
         }
 
@@ -127,7 +128,7 @@
             margin-bottom: 1rem;
             line-height: 1;
             max-width: 100%;
-            background: linear-gradient(135deg, #ffffff, #FFD700);
+            background: linear-gradient(135deg, #003366, #66CCFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -135,23 +136,24 @@
 
         .hero-text h2 {
             font-size: clamp(1.2rem, 3vw, 1.5rem);
-            color: #99CC33;
+            color: #FF6600;
+            /* Bright Orange for emphasis */
             margin-bottom: 1.5rem;
         }
 
-            .hero-text p {
-                font-size: 1.15rem;
-                font-weight: 600;
-                margin-bottom: 1.8rem;
-                color: #f5f5f5;
-                max-width: 90%;
-            }
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #333;
+            /* Darker for readability */
+        }
+
         .cta-button {
             display: inline-block;
             padding: 12px 30px;
-            background: linear-gradient(135deg, #99CC33, #FFD700);
-            color: #000;
-            /* Black text for contrast */
+            background: linear-gradient(135deg, #FF6600, #66CCFF);
+            color: #fff;
+            /* White text */
             text-decoration: none;
             border-radius: 30px;
             font-weight: bold;
@@ -163,20 +165,21 @@
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(153, 204, 51, 0.3);
+            box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
         }
 
         .hero-image {
             text-align: center;
         }
 
-        .profile-image {
-            width: clamp(200px, 30vw, 300px);
-            height: clamp(200px, 30vw, 300px);
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(153, 204, 51, 0.3);
+         .profile-image {
+        width: clamp(200px, 30vw, 300px);
+        height: clamp(200px, 30vw, 300px);
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        box-shadow: 0 20px 40px rgba(166, 230, 207, 0.3);
+        border: 5px solid #003366; /* Circle border with the specified color */
         }
 
         .profile-image img {
@@ -191,15 +194,15 @@
         }
 
         .section.alt {
-            background: rgba(47, 79, 79, 0.3);
+            background: rgba(0, 51, 102, 0.1);
         }
 
         .section-title {
             text-align: center;
             font-size: clamp(2rem, 4vw, 2.5rem);
             margin-bottom: 3rem;
-            color: #FFD700;
-            /* Soft Gold for section titles */
+            color: #FF6600;
+            /* Bright Orange for section titles */
         }
 
         /* About Content */
@@ -217,10 +220,10 @@
         }
 
         .skill-item {
-            background: rgba(153, 204, 51, 0.1);
+            background: rgba(102, 204, 255, 0.1);
             padding: 1.5rem 1rem;
             border-radius: 10px;
-            border: 1px solid #99CC33;
+            border: 1px solid #66CCFF;
             text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -228,19 +231,18 @@
 
         .skill-item:hover {
             transform: translateY(-5px);
-            background: rgba(153, 204, 51, 0.2);
-            box-shadow: 0 10px 25px rgba(153, 204, 51, 0.3);
+            background: rgba(102, 204, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(102, 204, 255, 0.3);
         }
 
         .skill-item h3 {
             margin-bottom: 0.5rem;
             font-size: 1rem;
-            font-weight: 600;
         }
 
         .skill-item p {
             font-size: 0.9rem;
-            color: #cccccc;
+            color: #333;
         }
 
         /* Projects Grid */
@@ -252,8 +254,8 @@
         }
 
         .project-category-card {
-            background: rgba(47, 79, 79, 0.7);
-            border: 1px solid #99CC33;
+            background: rgba(0, 51, 102, 0.7);
+            border: 1px solid #66CCFF;
             border-radius: 15px;
             padding: 2rem;
             transition: all 0.3s ease;
@@ -265,8 +267,8 @@
 
         .project-category-card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(153, 204, 51, 0.2);
-            border-color: #99CC33;
+            box-shadow: 0 20px 40px rgba(102, 204, 255, 0.2);
+            border-color: #FF6600;
         }
 
         .category-icon {
@@ -281,20 +283,19 @@
         }
 
         .project-category-card h3 {
-            color: #FFD700;
+            color: #FF6600;
             margin-bottom: 0.5rem;
             font-size: 1.3rem;
         }
 
         .project-category-card p {
             margin-bottom: 1rem;
-            font-weight: 600;
-            color: #eaeaea;
+            color: #333;
         }
 
         .category-count {
-            background: rgba(153, 204, 51, 0.2);
-            color: #FFD700;
+            background: rgba(255, 102, 0, 0.2);
+            color: #FF6600;
             padding: 0.4rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -306,11 +307,11 @@
         .resume-container {
             max-width: 1000px;
             margin: 0 auto;
-            background: rgba(47, 79, 79, 0.5);
+            background: rgba(0, 51, 102, 0.5);
             padding: 3rem;
             border-radius: 20px;
-            border: 1px solid #99CC33;
-            box-shadow: 0 20px 40px rgba(153, 204, 51, 0.1);
+            border: 1px solid #66CCFF;
+            box-shadow: 0 20px 40px rgba(102, 204, 255, 0.1);
         }
 
         .resume-section {
@@ -319,12 +320,12 @@
 
         .resume-section-title {
             font-size: 1.2rem;
-            font-weight: 900;
+            font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 2rem;
-            color: #FFD700;
-            border-bottom: 2px solid #99CC33;
+            color: #FF6600;
+            border-bottom: 2px solid #66CCFF;
             padding-bottom: 0.5rem;
         }
 
@@ -333,18 +334,18 @@
         .education-entry {
             display: flex;
             margin-bottom: 2rem;
-            background: rgba(153, 204, 51, 0.05);
+            background: rgba(102, 204, 255, 0.05);
             padding: 1.5rem;
             border-radius: 15px;
-            border: 1px solid rgba(153, 204, 51, 0.3);
+            border: 1px solid rgba(102, 204, 255, 0.3);
             transition: all 0.3s ease;
         }
 
         .job-entry:hover,
         .education-entry:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(153, 204, 51, 0.2);
-            border-color: #99CC33;
+            box-shadow: 0 15px 30px rgba(102, 204, 255, 0.2);
+            border-color: #FF6600;
         }
 
         .job-left,
@@ -358,7 +359,7 @@
         .education-right {
             flex: 1;
             padding-left: 2rem;
-            border-left: 2px solid #99CC33;
+            border-left: 2px solid #66CCFF;
             position: relative;
         }
 
@@ -370,9 +371,9 @@
             top: 8px;
             width: 10px;
             height: 10px;
-            background: linear-gradient(135deg, #99CC33, #FFD700);
+            background: linear-gradient(135deg, #FF6600, #66CCFF);
             border-radius: 50%;
-            box-shadow: 0 0 10px rgba(153, 204, 51, 0.5);
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
         }
 
         .company,
@@ -381,22 +382,22 @@
             font-size: 1rem;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
-            color: #FFD700;
+            color: #FF6600;
             letter-spacing: 1px;
         }
 
         .location,
         .school-location {
             font-size: 0.9rem;
-            color: #cccccc;
+            color: #333;
             margin-bottom: 0.5rem;
         }
 
         .dates,
         .graduation-year {
             font-size: 0.9rem;
-            color: #FFD700;
-            background: rgba(153, 204, 51, 0.1);
+            color: #FF6600;
+            background: rgba(255, 102, 0, 0.1);
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
             display: inline-block;
@@ -406,21 +407,20 @@
         .degree {
             font-weight: bold;
             font-size: 1.1rem;
-            font-weight: 800;
             margin-bottom: 1rem;
-            color: #ffffff;
+            color: #fff;
         }
 
         .job-description,
         .degree-description {
             font-size: 0.95rem;
-            font-weight: 600;
             line-height: 1.6;
-            color: #cccccc;
+            color: #000;
         }
 
         .job-description ul,
         .degree-description ul {
+            color: #000;
             list-style: none;
             padding-left: 0;
         }
@@ -437,8 +437,8 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: #FFD700;
-            font-weight: 900;
+            color: #FF6600;
+            font-weight: bold;
         }
 
         /* Languages */
@@ -450,18 +450,18 @@
         }
 
         .language-item {
-            background: rgba(153, 204, 51, 0.05);
+            background: rgba(102, 204, 255, 0.05);
             padding: 1.5rem;
             border-radius: 15px;
-            border: 1px solid rgba(153, 204, 51, 0.3);
+            border: 1px solid rgba(102, 204, 255, 0.3);
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .language-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(153, 204, 51, 0.2);
-            border-color: #99CC33;
+            box-shadow: 0 15px 30px rgba(102, 204, 255, 0.2);
+            border-color: #FF6600;
         }
 
         .language-name {
@@ -469,7 +469,7 @@
             text-transform: uppercase;
             font-weight: bold;
             margin-bottom: 1rem;
-            color: #FFD700;
+            color: #FF6600;
             letter-spacing: 1px;
         }
 
@@ -484,14 +484,14 @@
 
         .proficiency-fill {
             height: 100%;
-            background: linear-gradient(135deg, #99CC33, #FFD700);
+            background: linear-gradient(135deg, #FF6600, #66CCFF);
             border-radius: 3px;
             transition: width 0.3s ease;
         }
 
         .proficiency-label {
             font-size: 0.8rem;
-            color: #cccccc;
+            color: #333;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -514,15 +514,15 @@
             align-items: center;
             gap: 1rem;
             padding: 1rem;
-            background: rgba(153, 204, 51, 0.1);
+            background: rgba(102, 204, 255, 0.1);
             border-radius: 10px;
-            border: 1px solid #99CC33;
+            border: 1px solid #66CCFF;
             transition: all 0.3s ease;
         }
 
         .contact-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(153, 204, 51, 0.2);
+            box-shadow: 0 10px 20px rgba(102, 204, 255, 0.2);
         }
 
         .contact-form {
@@ -538,7 +538,7 @@
         }
 
         .form-group label {
-            color: #FFD700;
+            color: #FF6600;
             font-weight: bold;
         }
 
@@ -546,9 +546,9 @@
         .form-group textarea {
             padding: 1rem;
             background: rgba(0, 0, 0, 0.5);
-            border: 1px solid #99CC33;
+            border: 1px solid #66CCFF;
             border-radius: 8px;
-            color: #ffffff;
+            color: #fff;
             font-family: inherit;
             transition: all 0.3s ease;
         }
@@ -556,8 +556,8 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #FFD700;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            border-color: #FF6600;
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
         }
 
         .form-group textarea {
@@ -567,10 +567,13 @@
 
         /* Footer */
         .footer {
-            background: #000;
+            background: #003366;
+            /* Navy Blue footer for consistency */
             padding: 2rem 0;
             text-align: center;
-            border-top: 1px solid #99CC33;
+            border-top: 1px solid #FF6600;
+            /* Bright Orange border top */
+            color: #fff;
         }
 
         /* Responsive Design */
@@ -581,7 +584,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: rgba(47, 79, 79, 0.95);
+                background: rgba(0, 51, 102, 0.95);
                 flex-direction: column;
                 padding: 1rem;
                 gap: 1rem;
@@ -601,7 +604,6 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-
             .skills-grid {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             }
@@ -622,7 +624,7 @@
             .education-right {
                 padding-left: 0;
                 border-left: none;
-                border-top: 2px solid #99CC33;
+                border-top: 2px solid #66CCFF;
                 padding-top: 1rem;
             }
 
@@ -657,7 +659,8 @@
             position: absolute;
             width: 4px;
             height: 4px;
-            background: #99CC33;
+            background: #FF6600;
+            /* Bright Orange particles for visibility */
             border-radius: 50%;
             opacity: 0.7;
             animation: float 6s ease-in-out infinite;
@@ -679,10 +682,6 @@
         html {
             scroll-behavior: smooth;
         }
-                h1, h2, h3, h4 {
-            font-weight: 800;
-        }
-
     </style>
 </head>
 
@@ -721,7 +720,7 @@
                         developed strong skills in Excel spreadsheet mastery, data visualization, and creating impactful
                         PowerPoint
                         presentations that communicate complex insights clearly and effectively.
-                    
+
                     <p>
                         My background in banking and marketing has honed my analytical thinking, attention to detail,
                         and ability to translate
@@ -732,43 +731,36 @@
                         your data-driven initiatives!.</p>
 
                     <a href="#projects" class="cta-button">See My Work</a>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-image">
+                        <img src="my-photo.png" alt="Charles's Photo" />
                     </div>
-                    <div class="hero-image">
-                        <div class="profile-image">
-                            <img src="my-photo.png" alt="Charles's Photo" />
-                        </div>
-                    </div>
-                    </div>
-                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Floating particles -->
         <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
         <div class="particle" style="top: 60%; left: 80%; animation-delay: 2s;"></div>
         <div class="particle" style="top: 80%; left: 20%; animation-delay: 4s;"></div>
     </section>
 
-<!-- About Section -->
-<section id="about" class="section alt">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div>
-                <p>Driven by a deep passion for uncovering meaningful insights within complex data, I combine analytical
-                    precision with
-                    innovative problem-solving to deliver impactful solutions. My expertise spans multiple industries,
-                    empowering
-                    organizations in Nigeria and globally to harness their data for strategic advantage and sustainable
-                    growth.
-                    .</p>
-                <br />
-                <p>I believe that every dataset tells a story, and my mission is to help organizations discover and act
-                    upon those stories
-                    to drive meaningful outcomes. With a background in banking, marketing, and project management, I
-                    bring a diverse
-                    perspective complemented by advanced skills in data visualization, Excel, and strategic
-                    communication. I am dedicated to
-                    transforming data into actionable insights that support informed decision-making and foster
-                    sustainable growth.
-                </p>
+    <!-- About Section -->
+    <section id="about" class="section alt">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div>
+                    <p>Driven by a deep passion for uncovering meaningful insights within complex data, I combine analytical precision with
+                    innovative problem-solving to deliver impactful solutions. My expertise spans multiple industries, empowering
+                    organizations in Nigeria and globally to harness their data for strategic advantage and sustainable growth.
+.</p>
+                    <br />
+                    <p>I believe that every dataset tells a story, and my mission is to help organizations discover and act upon those stories
+                    to drive meaningful outcomes. With a background in banking, marketing, and project management, I bring a diverse
+                    perspective complemented by advanced skills in data visualization, Excel, and strategic communication. I am dedicated to
+                    transforming data into actionable insights that support informed decision-making and foster sustainable growth.
+</p>
                 </div>
                 <div class="skills-grid">
                     <div class="skill-item">
@@ -800,11 +792,11 @@
         </div>
     </section>
 
-<!-- Projects Section -->
-<section id="projects" class="section">
-    <div class="container">
-        <h2 class="section-title">All My Data Projects</h2>
-        <div class="projects-grid">
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">All My Data Projects</h2>
+            <div class="projects-grid">
 
             <a href="python.html" class="project-category-card">
                 <div class="category-icon">🐍</div>
@@ -813,158 +805,142 @@
                 <div class="category-count">4 Projects</div>
             </a>
 
-            <a href="sql.html" class="project-category-card">
-                <div class="category-icon">🗄️</div>
-                <h3>SQL & NoSQL</h3>
-                <p>Database Management</p>
-                <div class="category-count">4 Projects</div>
-            </a>
+                <a href="sql.html" class="project-category-card">
+                    <div class="category-icon">🗄️</div>
+                    <h3>SQL & NoSQL</h3>
+                    <p>Database Management</p>
+                    <div class="category-count">4 Projects</div>
+                </a>
 
-            <a href="visualization.html" class="project-category-card">
-                <div class="category-icon">📊</div>
-                <h3>Tableau & Power BI</h3>
-                <p>Data Visualization</p>
-                <div class="category-count">6 Projects</div>
-            </a>
+                <a href="visualization.html" class="project-category-card">
+                    <div class="category-icon">📊</div>
+                    <h3>Tableau & Power BI</h3>
+                    <p>Data Visualization</p>
+                    <div class="category-count">6 Projects</div>
+                </a>
 
-            <a href="ml.html" class="project-category-card">
-                <div class="category-icon">🤖</div>
-                <h3>Machine Learning</h3>
-                <p>Predictive Modeling</p>
-                <div class="category-count">4 Projects</div>
-            </a>
+                <a href="ml.html" class="project-category-card">
+                    <div class="category-icon">🤖</div>
+                    <h3>Machine Learning</h3>
+                    <p>Predictive Modeling</p>
+                    <div class="category-count">4 Projects</div>
+                </a>
 
-            <a href="excel.html" class="project-category-card">
-                <div class="category-icon">📈</div>
-                <h3>Excel & Google Sheets</h3>
-                <p>Business Intelligence</p>
-                <div class="category-count">3 Projects</div>
-            </a>
+                <a href="excel.html" class="project-category-card">
+                    <div class="category-icon">📈</div>
+                    <h3>Excel & Google Sheets</h3>
+                    <p>Business Intelligence</p>
+                    <div class="category-count">3 Projects</div>
+                </a>
 
-            <a href="stats.html" class="project-category-card">
-                <div class="category-icon">📉</div>
-                <h3>Statistical Analysis</h3>
-                <p>Research & Insights</p>
-                <div class="category-count">4 Projects</div>
-            </a>
+                <a href="stats.html" class="project-category-card">
+                    <div class="category-icon">📉</div>
+                    <h3>Statistical Analysis</h3>
+                    <p>Research & Insights</p>
+                    <div class="category-count">4 Projects</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section alt">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <div class="resume-container">
+<!-- Work Experience -->
+<div class="resume-section">
+    <h3 class="resume-section-title">Work Experience</h3>
+
+    <!-- Existing Job -->
+    <div class="job-entry">
+        <div class="job-left">
+            <div class="company">Digital Fortress Institute</div>
+            <div class="location">Lagos, Nigeria</div>
+            <div class="dates">Jan 2022 - Present</div>
+        </div>
+        <div class="job-right">
+            <div class="job-title">Founder & Lead Data Analyst</div>
+            <div class="job-description">
+                <ul>
+                    <li>Founded and led data analytics consultancy serving 10+ clients across West Africa</li>
+                    <li>Developed custom analytics solutions resulting in an average 25% efficiency improvement for
+                        clients</li>
+                    <li>Conducted training workshops for 100+ professionals in data analysis and visualization</li>
+                    <li>Built predictive models that helped clients reduce operational costs by up to 30%</li>
+                </ul>
+            </div>
         </div>
     </div>
-</section>
 
-<!-- Resume Section -->
-<section id="resume" class="section alt">
-    <div class="container">
-        <h2 class="section-title">Resume</h2>
-        <div class="resume-container">
-            <!-- Work Experience -->
-            <div class="resume-section">
-                <h3 class="resume-section-title">Work Experience</h3>
-
-                <!-- Existing Job -->
-                <div class="job-entry">
-                    <div class="job-left">
-                        <div class="company">Digital Fortress Institute</div>
-                        <div class="location">Lagos, Nigeria</div>
-                        <div class="dates">Jan 2022 - Present</div>
-                    </div>
-                    <div class="job-right">
-                        <div class="job-title">Founder & Lead Data Analyst</div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Founded and led data analytics consultancy serving 10+ clients across West Africa
-                                </li>
-                                <li>Developed custom analytics solutions resulting in an average 25% efficiency
-                                    improvement for
-                                    clients</li>
-                                <li>Conducted training workshops for 100+ professionals in data analysis and
-                                    visualization</li>
-                                <li>Built predictive models that helped clients reduce operational costs by up to 30%
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additional Work Experience -->
-                <!-- Example 1 -->
-                <div class="job-entry">
-                    <div class="job-left">
-                        <div class="company">Digital Fortress Institute</div>
-                        <div class="location">Lagos, Nigeria</div>
-                        <div class="dates">May 2024 – Dec 2024</div>
-                    </div>
-                    <div class="job-right">
-                        <div class="job-title">Python Data Scraping & Data Support Analyst</div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Automated data collection and reporting processes, saving 10+ hours of manual work
-                                    weekly</li>
-                                <li>Built performance dashboards to track marketing KPIs and campaign effectiveness</li>
-                                <li>Provided insights that improved booking conversions by 15% and reduced reporting
-                                    errors by 25%
-                                </li>
-                                <li>Maintained project documentation using Notion, improving cross-team collaboration
-                                    and visibility
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Example 2 -->
-                <div class="job-entry">
-                    <div class="job-left">
-                        <div class="company">Almond Careers</div>
-                        <div class="location">Lagos, Nigeria</div>
-                        <div class="dates">May 2019 – Dec 2021</div>
-                    </div>
-                    <div class="job-right">
-                        <div class="job-title">Project Coordinator & Data Analyst</div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Conducted end-to-end project analytics to improve operational efficiency and
-                                    resource allocation
-                                </li>
-                                <li>Leveraged Figma for design collaboration and data visualization alignment with
-                                    project teams
-                                </li>
-                                <li>Developed project reports that increased efficiency by 15% and reduced delays by 20%
-                                </li>
-                                <li>Enhanced data-driven decision-making accuracy by 30%, improving overall client
-                                    satisfaction</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Example 3 -->
-                <div class="job-entry">
-                    <div class="job-left">
-                        <div class="company">Skye Bank Plc</div>
-                        <div class="location">Abeokuta, Nigeria</div>
-                        <div class="dates">Apr 2007 – Dec 2016</div>
-                    </div>
-                    <div class="job-right">
-                        <div class="job-title">Business Relationship Officer</div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Analyzed customer data to support marketing campaigns and improve service delivery
-                                </li>
-                                <li>Increased cross-selling opportunities by 20% and client satisfaction by 15% through
-                                    data-driven
-                                    insights</li>
-                                <li>Onboarded over 300 new clients annually, contributing to a 25% growth in customer
-                                    base</li>
-                                <li>Conducted remote client meetings and training via Cisco Webex, enhancing engagement
-                                    and service
-                                    quality</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    <!-- Additional Work Experience -->
+    <!-- Example 1 -->
+    <div class="job-entry">
+        <div class="job-left">
+            <div class="company">Digital Fortress Institute</div>
+            <div class="location">Lagos, Nigeria</div>
+            <div class="dates">May 2024 – Dec 2024</div>
+        </div>
+        <div class="job-right">
+            <div class="job-title">Python Data Scraping & Data Support Analyst</div>
+            <div class="job-description">
+                <ul>
+                    <li>Automated data collection and reporting processes, saving 10+ hours of manual work weekly</li>
+                    <li>Built performance dashboards to track marketing KPIs and campaign effectiveness</li>
+                    <li>Provided insights that improved booking conversions by 15% and reduced reporting errors by 25%
+                    </li>
+                    <li>Maintained project documentation using Notion, improving cross-team collaboration and visibility
+                    </li>
+                </ul>
             </div>
-</section>
+        </div>
+    </div>
 
+    <!-- Example 2 -->
+    <div class="job-entry">
+        <div class="job-left">
+            <div class="company">Almond Careers</div>
+            <div class="location">Lagos, Nigeria</div>
+            <div class="dates">May 2019 – Dec 2021</div>
+        </div>
+        <div class="job-right">
+            <div class="job-title">Project Coordinator & Data Analyst</div>
+            <div class="job-description">
+                <ul>
+                    <li>Conducted end-to-end project analytics to improve operational efficiency and resource allocation
+                    </li>
+                    <li>Leveraged Figma for design collaboration and data visualization alignment with project teams
+                    </li>
+                    <li>Developed project reports that increased efficiency by 15% and reduced delays by 20%</li>
+                    <li>Enhanced data-driven decision-making accuracy by 30%, improving overall client satisfaction</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example 3 -->
+    <div class="job-entry">
+        <div class="job-left">
+            <div class="company">Skye Bank Plc</div>
+            <div class="location">Abeokuta, Nigeria</div>
+            <div class="dates">Apr 2007 – Dec 2016</div>
+        </div>
+        <div class="job-right">
+            <div class="job-title">Business Relationship Officer</div>
+            <div class="job-description">
+                <ul>
+                    <li>Analyzed customer data to support marketing campaigns and improve service delivery</li>
+                    <li>Increased cross-selling opportunities by 20% and client satisfaction by 15% through data-driven
+                        insights</li>
+                    <li>Onboarded over 300 new clients annually, contributing to a 25% growth in customer base</li>
+                    <li>Conducted remote client meetings and training via Cisco Webex, enhancing engagement and service
+                        quality</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
@@ -972,13 +948,13 @@
             <h2 class="section-title">Let's Connect</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <span>📧</span>
-                        <div>
-                            <strong>Phone</strong>
-                            <p>+2347025090076</p>
+                        <div class="contact-item">
+                            <span>📧</span>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>+2347025090076</p>
+                            </div>
                         </div>
-                    </div>
                     <div class="contact-item">
                         <span>📧</span>
                         <div>
@@ -1043,18 +1019,15 @@
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('show');
         }
-
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('navLinks').classList.remove('show');
             });
         });
-
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-
         const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1062,11 +1035,9 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.section, .skill-item, .project-category-card, .job-entry, .education-entry').forEach(el => {
             observer.observe(el);
         });
-
         document.querySelector('.contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
             alert('Thank you for your message! I will get back to you soon.');
