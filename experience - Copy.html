@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Experience</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #0f172a;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: #22c55e;
+            transform: translateX(-50%);
+        }
+
+        /* CARD */
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        /* DOT */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            width: 15px;
+            height: 15px;
+            background: #22c55e;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .timeline-item.left::before {
+            right: -8px;
+        }
+
+        .timeline-item.right::before {
+            left: -8px;
+        }
+
+        h5 {
+            color: #22c55e;
+        }
+
+        .badge {
+            margin: 2px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Senior Analyst</a>
+        </div>
+    </nav>
+
+    <!-- EXPERIENCE -->
+    <section class="container">
+
+        <h2 class="text-center mt-5">Professional Experience</h2>
+
+        <div class="timeline">
+
+            <!-- AMDARI -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
+
+                    <h4>Data Analyst Consultant</h4>
+                    <h5>AMDARI • London (Hybrid)</h5>
+                    <p><small>Sep 2025 – Present</small></p>
+
+                    <ul>
+                        <li>Directed analytics strategy and scalable data pipelines</li>
+                        <li>Delivered churn & retention models for retail banking</li>
+                        <li>Built audience intelligence models for media sector</li>
+                        <li><strong>+25–30% operational efficiency</strong></li>
+                        <li><strong>-40% reporting time</strong></li>
+                        <li><strong>+50% analytics adoption</strong></li>
+                    </ul>
+
+                    <div>
+                        <span class="badge bg-success">SQL</span>
+                        <span class="badge bg-success">Power BI</span>
+                        <span class="badge bg-success">Tableau</span>
+                        <span class="badge bg-success">AWS</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- UPWORK -->
+            <div class="timeline-item right">
+                <div class="timeline-content">
+
+                    <h4>Freelance Data Analyst</h4>
+                    <h5>Upwork • Remote</h5>
+                    <p><small>Dec 2025 – Present</small></p>
+
+                    <ul>
+                        <li>Delivered BI solutions across multiple industries</li>
+                        <li>Built dashboards for real-time KPI tracking</li>
+                        <li>Designed automated reporting workflows</li>
+                        <li>Translated business problems into analytics solutions</li>
+                    </ul>
+
+                    <div>
+                        <span class="badge bg-primary">Python</span>
+                        <span class="badge bg-primary">SQL</span>
+                        <span class="badge bg-primary">Power BI</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- DIGITAL FORTRESS -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
+
+                    <h4>Data Analyst (Python & Automation)</h4>
+                    <h5>Digital Fortress • Lagos</h5>
+                    <p><small>May 2024 – May 2025</small></p>
+
+                    <ul>
+                        <li>Automated dashboards reducing reporting time by 50%</li>
+                        <li>Analyzed PostgreSQL datasets for insights</li>
+                        <li>Built ETL workflows and validation frameworks</li>
+                    </ul>
+
+                    <div>
+                        <span class="badge bg-warning text-dark">Python</span>
+                        <span class="badge bg-warning text-dark">PostgreSQL</span>
+                        <span class="badge bg-warning text-dark">Power BI</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- TECHNOHACKS -->
+            <div class="timeline-item right">
+                <div class="timeline-content">
+
+                    <h4>Business Analyst Intern</h4>
+                    <h5>TechnoHacks • Remote</h5>
+                    <p><small>Jun 2025 – Sep 2025</small></p>
+
+                    <ul>
+                        <li>Built forecasting models for planning</li>
+                        <li>Developed performance analytics frameworks</li>
+                        <li>Improved decision-making processes</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- ALMOND -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
+
+                    <h4>Project Analytics Lead</h4>
+                    <h5>Almond Careers • Remote</h5>
+                    <p><small>2019 – 2022</small></p>
+
+                    <ul>
+                        <li><strong>+15% efficiency</strong> via analytics reporting</li>
+                        <li><strong>-20% delays</strong> using forecasting models</li>
+                        <li>Built dashboards for project performance</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- SKYE BANK -->
+            <div class="timeline-item right">
+                <div class="timeline-content">
+
+                    <h4>Business Intelligence Analyst</h4>
+                    <h5>Skye Bank Plc</h5>
+                    <p><small>2007 – 2018</small></p>
+
+                    <ul>
+                        <li><strong>+25% customer growth</strong> via cohort analysis</li>
+                        <li><strong>+20% cross-selling</strong> through segmentation</li>
+                        <li>Developed dashboards for KPI tracking</li>
+                        <li>Strengthened data-driven decision making</li>
+                    </ul>
+
+                    <div>
+                        <span class="badge bg-danger">SQL</span>
+                        <span class="badge bg-danger">Excel</span>
+                        <span class="badge bg-danger">Analytics</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="text-center p-4">
+        © Senior Portfolio 2026
+    </footer>
+
+</body>
+
+</html>

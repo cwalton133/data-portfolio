@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Experience</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+   
+    <style>
+        body {
+            background: #0f172a;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: #22c55e;
+            transform: translateX(-50%);
+        }
+
+        /* CARD */
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        /* DOT */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            width: 15px;
+            height: 15px;
+            background: #22c55e;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .timeline-item.left::before {
+            right: -8px;
+        }
+
+        .timeline-item.right::before {
+            left: -8px;
+        }
+
+        h5 {
+            color: #22c55e;
+        }
+
+        .badge {
+            margin: 2px;
+        }
+        /* CASE STUDY CARDS */
+.case-card {
+    background:#1e293b;
+    padding:25px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.case-card:hover {
+    transform:translateY(-5px);
+}
+
+/* HIDDEN CONTENT */
+.case-hidden {
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.5s ease;
+}
+
+.case-card.active .case-hidden {
+    max-height:500px;
+}
+.case-card iframe {
+    border-radius:10px;
+}
+
+.case-card img {
+    border:1px solid rgba(255,255,255,0.1);
+}
+    </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Senior Analyst</a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="intro.html">Intro</a></li>
+                <li><a class="nav-link" href="skills.html">Skills</a></li>
+                <li><a class="nav-link" href="experience.html">Experience</a></li>
+                <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- EXPERIENCE -->
+    <section class="container py-5">
+
+        <h2 class="text-center mb-5">Experience & Case Studies</h2>
+
+        <div class="row g-4">
+
+            <!-- AMDARI -->
+            <div class="col-md-6">
+                <div class="case-card" onclick="toggleCase(this)">
+            
+                    <h4>Data Analyst Consultant</h4>
+                    <p class="text-success">AMDARI • London</p>
+                    <small>Sep 2025 – Present</small>
+            
+                    <div class="case-hidden">
+            
+                        <hr>
+            
+                        <!-- PREVIEW IMAGE -->
+                        <img src="images/sales-dashboard.png" class="img-fluid rounded mb-3">
+            
+                        <h6>Problem</h6>
+                        <p>No real-time visibility into customer retention and business performance.</p>
+            
+                        <h6>Solution</h6>
+                        <ul>
+                            <li>Built Power BI dashboards for executive decision-making</li>
+                            <li>Designed churn prediction models</li>
+                            <li>Automated reporting pipelines</li>
+                        </ul>
+            
+                        <h6>Impact</h6>
+                        <div class="row text-center mb-3">
+                            <div class="col-4"><strong>+25%</strong><br><small>Efficiency</small></div>
+                            <div class="col-4"><strong>-40%</strong><br><small>Reporting Time</small></div>
+                            <div class="col-4"><strong>+50%</strong><br><small>Adoption</small></div>
+                        </div>
+            
+                        <!-- LIVE DASHBOARD -->
+                        <div class="ratio ratio-16x9 mb-3">
+                            <iframe src="https://app.powerbi.com/view?r=YOUR_EMBED_LINK"></iframe>
+                        </div>
+            
+                        <!-- ACTION BUTTONS -->
+                        <div class="d-flex gap-2 flex-wrap">
+            
+                            <a href="https://github.com/cwalton133/customer-segmentation" target="_blank"
+                                class="btn btn-outline-light">
+                                💻 View Code
+                            </a>
+            
+                            <a href="projects.html" class="btn btn-success">
+                                📊 Full Case Study
+                            </a>
+            
+                        </div>
+            
+                    </div>
+            
+                </div>
+            </div>
+
+            <!-- UPWORK -->
+            <div class="col-md-6">
+                <div class="case-card" onclick="toggleCase(this)">
+
+                    <h4>Freelance Data Analyst</h4>
+                    <p class="text-success">Upwork • Remote</p>
+                    <small>Dec 2025 – Present</small>
+
+                    <div class="case-hidden">
+
+                        <hr>
+
+                        <h6>Problem</h6>
+                        <p>Clients lacked structured analytics and actionable insights.</p>
+
+                        <h6>Action</h6>
+                        <ul>
+                            <li>Built dashboards for KPI monitoring</li>
+                            <li>Analyzed structured/unstructured data</li>
+                            <li>Designed automated reporting workflows</li>
+                        </ul>
+
+                        <h6>Impact</h6>
+                        <ul>
+                            <li>Improved decision-making across multiple clients</li>
+                            <li>Delivered scalable BI solutions</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- DIGITAL FORTRESS -->
+            <div class="col-md-6">
+                <div class="case-card" onclick="toggleCase(this)">
+
+                    <h4>Data Analyst (Automation)</h4>
+                    <p class="text-success">Digital Fortress</p>
+                    <small>2024 – 2025</small>
+
+                    <div class="case-hidden">
+
+                        <hr>
+
+                        <h6>Problem</h6>
+                        <p>Manual reporting and inconsistent data quality.</p>
+
+                        <h6>Action</h6>
+                        <ul>
+                            <li>Built automated dashboards</li>
+                            <li>Developed ETL pipelines with Python</li>
+                            <li>Queried PostgreSQL datasets</li>
+                        </ul>
+
+                        <h6>Impact</h6>
+                        <ul>
+                            <li>-50% reporting time</li>
+                            <li>Improved data accuracy and trust</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SKYE BANK -->
+            <div class="col-md-6">
+                <div class="case-card" onclick="toggleCase(this)">
+
+                    <h4>Business Intelligence Analyst</h4>
+                    <p class="text-success">Skye Bank Plc</p>
+                    <small>2007 – 2018</small>
+
+                    <div class="case-hidden">
+
+                        <hr>
+
+                        <h6>Problem</h6>
+                        <p>Low customer retention and limited visibility into behavior patterns.</p>
+
+                        <h6>Action</h6>
+                        <ul>
+                            <li>Performed cohort & segmentation analysis</li>
+                            <li>Built dashboards for KPI tracking</li>
+                            <li>Partnered with business teams</li>
+                        </ul>
+
+                        <h6>Impact</h6>
+                        <ul>
+                            <li>+25% customer growth</li>
+                            <li>+20% cross-selling</li>
+                            <li>Shift to data-driven decision-making</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="text-center p-4">
+        © Senior Portfolio 2026
+    </footer>
+
+
+    <script>
+        function toggleCase(card) {
+
+            // close others
+            document.querySelectorAll('.case-card').forEach(c => {
+                if (c !== card) c.classList.remove('active');
+            });
+
+            // toggle clicked
+            card.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>

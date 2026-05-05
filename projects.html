@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Senior Analyst</a>
+    
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="intro.html">Intro</a></li>
+                    <li><a class="nav-link" href="skills.html">Skills</a></li>
+                    <li><a class="nav-link" href="experience.html">Experience</a></li>
+                    <li><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section text-center">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3" data-aos="fade-up">
+                    <h2 class="kpi">+18%</h2>
+                    <p>Revenue Growth</p>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="kpi">-60%</h2>
+                    <p>Reporting Time</p>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="kpi">+42%</h2>
+                    <p>Marketing Efficiency</p>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="kpi">1M+</h2>
+                    <p>Records Processed</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="section">
+        <div class="container">
+
+            <h2 class="mb-4 text-center">Portfolio (Case Studies)</h2>
+
+            <div id="portfolioSection">
+
+                <!-- ===== CASE STUDY 1 ===== -->
+                <div class="card p-4 mb-5" data-aos="fade-up">
+
+                    <img src="images/sales-dashboard.png" class="img-fluid rounded mb-4">
+
+                    <h3>Sales Performance Dashboard</h3>
+
+                    <p><strong>Problem:</strong> No real-time sales visibility across regions.</p>
+
+                    <p><strong>Solution:</strong> Built an interactive Power BI dashboard integrating multiple data
+                        sources.</p>
+
+                    <p><strong>Impact:</strong></p>
+
+                    <div class="row text-center mb-3">
+                        <div class="col-md-4">
+                            <div class="kpi">+18%</div>
+                            <small>Revenue Growth</small>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="kpi">-60%</div>
+                            <small>Reporting Time</small>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="kpi">+35%</div>
+                            <small>Decision Speed</small>
+                        </div>
+                    </div>
+
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://app.powerbi.com/view?r=YOUR_EMBED_LINK"></iframe>
+                    </div>
+
+                </div>
+
+                <!-- ===== CASE STUDY 2 ===== -->
+                <div class="card p-4 mb-4 hidden">
+
+                    <img src="images/customer-insights.png" class="img-fluid rounded mb-3">
+
+                    <h4>Customer Segmentation Dashboard</h4>
+
+                    <p><strong>Problem:</strong> Poor marketing targeting due to lack of segmentation.</p>
+
+                    <p><strong>Approach:</strong> Developed Power BI dashboard using RFM segmentation logic.</p>
+
+                    <p><strong>Tools:</strong> Power BI, Python, SQL</p>
+
+                    <p><strong>Impact:</strong><br>
+                        ✔ Increased campaign efficiency by <strong>+42%</strong><br>
+                        ✔ Reduced churn by <strong>-15%</strong>
+                    </p>
+
+                </div>
+
+                <!-- ===== CASE STUDY 3 ===== -->
+                <div class="card p-4 mb-4 hidden">
+
+                    <img src="images/executive-dashboard.png" class="img-fluid rounded mb-3">
+
+                    <h4>Executive Business Overview Dashboard</h4>
+
+                    <p><strong>Problem:</strong> Executives lacked real-time KPIs.</p>
+
+                    <p><strong>Approach:</strong> Designed high-level KPI dashboard for leadership decision-making.</p>
+
+                    <p><strong>Tools:</strong> Power BI, SQL</p>
+
+                    <p><strong>Impact:</strong><br>
+                        ✔ Enabled real-time decision making<br>
+                        ✔ Improved operational efficiency
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- LOAD MORE BUTTON -->
+            <div class="text-center">
+                <button class="btn btn-primary" onclick="loadMore('portfolioSection')">
+                    View More
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- PROJECTS + GITHUB SECTION -->
+    <!-- ============================= -->
+
+    <section class="section bg-dark">
+        <div class="container">
+
+            <h2 class="text-center mb-4">Projects & GitHub</h2>
+
+            <!-- SQL + ETL PROJECT -->
+            <div class="card p-4 mb-4" data-aos="fade-up">
+
+                <h4>Customer Segmentation ETL Pipeline</h4>
+
+                <p>
+                    Built a scalable ETL pipeline using Python and SQL to process over 1M+ records
+                    and generate actionable customer segments for marketing optimization.
+                </p>
+
+                <div class="d-flex gap-2 mb-3">
+                    <span class="badge bg-primary">Python</span>
+                    <span class="badge bg-success">SQL</span>
+                    <span class="badge bg-warning text-dark">Airflow</span>
+                </div>
+
+                <a href="https://github.com/cwalton133/customer-segmentation" class="btn btn-primary">
+                    View GitHub
+                </a>
+
+            </div>
+
+            <!-- GITHUB REPO SECTION -->
+            <div class="card p-4 mb-4">
+
+                <h5>Data Warehouse Project</h5>
+
+                <p>Designed a scalable star schema data warehouse and optimized SQL queries for analytics.</p>
+
+                <a href="https://github.com/cwalton133/data-warehouse-project" class="btn btn-outline-info">
+                    View GitHub Repo
+                </a>
+
+            </div>
+
+            <div class="card p-4">
+
+                <h5>Automated Reporting System</h5>
+
+                <p>Built Python-based reporting automation integrated with Power BI dashboards.</p>
+
+                <a href="https://github.com/cwalton133/automated-reporting" class="btn btn-outline-light">
+                    View GitHub Repo
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container">
+    
+            <h2 class="text-center mb-5">Featured GitHub Projects</h2>
+    
+            <div class="row" id="githubProjects">
+                <p class="text-center">Loading projects...</p>
+            </div>
+    
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        © Senior Portfolio 2026
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+
+</body>
+
+</html>

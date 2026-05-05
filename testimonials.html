@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Testimonials</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #0f172a;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* AUTO SCROLL */
+        .scroll-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scroll-track {
+            display: flex;
+            gap: 20px;
+            animation: scroll 25s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* CARD */
+        .testimonial-card {
+            min-width: 350px;
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .client {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .client img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .verified {
+            color: #0a66c2;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #cbd5f5;
+        }
+
+        /* VIDEO */
+        .video-card {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Senior Analyst</a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="intro.html">Intro</a></li>
+                <li><a class="nav-link" href="skills.html">Skills</a></li>
+                <li><a class="nav-link" href="experience.html">Experience</a></li>
+                <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- ============================= -->
+    <!-- 🔥 AUTO SCROLL TESTIMONIALS -->
+    <!-- ============================= -->
+    <section class="container py-5">
+
+        <h2 class="text-center mb-4">What Clients Say</h2>
+
+        <div class="scroll-container">
+            <div class="scroll-track">
+
+                <!-- CARD 1 -->
+                <div class="testimonial-card">
+                    <div class="client">
+                        <img src="images/client1.jpg">
+                        <div>
+                            <strong>John Smith</strong><br>
+                            <small>Head of Analytics</small><br>
+                            <a href="https://linkedin.com/in/CLIENT1" target="_blank" class="verified">
+                                <i class="fab fa-linkedin"></i> Verified
+                            </a>
+                        </div>
+                    </div>
+                    <p class="quote">
+                        “Transformed our reporting into a real-time decision system.
+                        We saw measurable business impact almost immediately.”
+                    </p>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="testimonial-card">
+                    <div class="client">
+                        <img src="images/client2.jpg">
+                        <div>
+                            <strong>Sarah Johnson</strong><br>
+                            <small>Marketing Director</small><br>
+                            <a href="https://linkedin.com/in/CLIENT2" target="_blank" class="verified">
+                                <i class="fab fa-linkedin"></i> Verified
+                            </a>
+                        </div>
+                    </div>
+                    <p class="quote">
+                        “Exceptional at turning complex data into actionable insights.
+                        Our campaigns improved significantly.”
+                    </p>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="testimonial-card">
+                    <div class="client">
+                        <img src="images/client3.jpg">
+                        <div>
+                            <strong>Michael Brown</strong><br>
+                            <small>Operations Manager</small><br>
+                            <a href="https://linkedin.com/in/CLIENT3" target="_blank" class="verified">
+                                <i class="fab fa-linkedin"></i> Verified
+                            </a>
+                        </div>
+                    </div>
+                    <p class="quote">
+                        “Reduced manual reporting and improved operational efficiency.
+                        Highly recommend.”
+                    </p>
+                </div>
+
+                <!-- DUPLICATE FOR LOOP EFFECT -->
+                <div class="testimonial-card">
+                    <div class="client">
+                        <img src="images/client1.jpg">
+                        <div>
+                            <strong>John Smith</strong><br>
+                            <small>Head of Analytics</small>
+                        </div>
+                    </div>
+                    <p class="quote">“Outstanding analytics delivery.”</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ============================= -->
+    <!-- 🎥 VIDEO TESTIMONIALS -->
+    <!-- ============================= -->
+    <section class="container py-5">
+
+        <h2 class="text-center mb-4">Video Testimonials</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+                <div class="video-card">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_1" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="video-card">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_2" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============================= -->
+    <!-- 📸 LINKEDIN PROOF SECTION -->
+    <!-- ============================= -->
+    <section class="container py-5">
+
+        <h2 class="text-center mb-4">Verified LinkedIn Recommendations</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="testimonial-card text-center">
+
+                    <img src="images/linkedin-proof1.png" class="img-fluid rounded mb-3">
+
+                    <a href="https://linkedin.com/in/CLIENT1" target="_blank" class="btn btn-outline-light">
+                        View on LinkedIn
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testimonial-card text-center">
+
+                    <img src="images/linkedin-proof2.png" class="img-fluid rounded mb-3">
+
+                    <a href="https://linkedin.com/in/CLIENT2" target="_blank" class="btn btn-outline-light">
+                        View on LinkedIn
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testimonial-card text-center">
+
+                    <img src="images/linkedin-proof3.png" class="img-fluid rounded mb-3">
+
+                    <a href="https://linkedin.com/in/CLIENT3" target="_blank" class="btn btn-outline-light">
+                        View on LinkedIn
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="container py-5">
+    
+        <h2 class="text-center mb-4">Leave a Recommendation</h2>
+    
+        <form id="testimonialForm" class="col-md-6 mx-auto" action="https://formsubmit.co/cwalton1335@gmail.com" method="POST">
+    
+            <input type="text" name="name" class="form-control mb-3" placeholder="Your Name" required>
+    
+            <input type="text" name="role" class="form-control mb-3" placeholder="Your Role / Company" required>
+    
+            <input type="url" name="linkedin" class="form-control mb-3" placeholder="LinkedIn Profile URL" required>
+    
+            <textarea name="message" class="form-control mb-3" rows="4" placeholder="Write your recommendation..."
+                required></textarea>
+    
+            <button class="btn btn-success w-100">Submit Recommendation</button>
+    
+        </form>
+    
+        <p id="formMsg" class="text-center mt-3"></p>
+    
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center pb-5">
+
+        <h4>Work with me or leave a recommendation</h4>
+
+        <a href="contact.html" class="btn btn-success mt-3">
+            Request Collaboration
+        </a>
+
+    </section>
+
+    <footer class="text-center p-4">
+        © Senior Portfolio 2026
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    
+    <script>
+        (function () {
+            emailjs.init("YOUR_PUBLIC_KEY"); // from EmailJS
+        })();
+
+        document.getElementById("testimonialForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+                .then(() => {
+                    document.getElementById("formMsg").innerHTML =
+                        "<span class='text-success'>✅ Recommendation sent successfully!</span>";
+                    this.reset();
+                })
+                .catch(() => {
+                    document.getElementById("formMsg").innerHTML =
+                        "<span class='text-danger'>❌ Failed to send. Try again.</span>";
+                });
+        });
+    </script>
+
+</body>
+
+</html>
