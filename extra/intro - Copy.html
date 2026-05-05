@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Intro - Charles Walton</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS (Scroll Animations) -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #0b0f19;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #111827, #020617);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .highlight {
+            color: #22c55e;
+        }
+
+        .fade-text {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #1f2937;
+            border-radius: 20px;
+        }
+
+        .profile-img {
+            width: 200px;
+            border-radius: 50%;
+            border: 4px solid #22c55e;
+        }
+
+        .kpi {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #22c55e;
+        }
+
+        .cta-btn {
+            background: #22c55e;
+            color: black;
+            font-weight: bold;
+        }
+
+        .cta-btn:hover {
+            background: #16a34a;
+        }
+        /* PARALLAX BACKGROUND */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: radial-gradient(circle, #111827, #020617);
+    transform: translateY(0);
+    z-index: -1;
+}
+
+/* MORPH TEXT */
+#morphText {
+    transition: all 0.5s ease;
+}
+
+.highlight {
+    color: #22c55e;
+}
+
+/* SCROLL TEXT FADE */
+.scroll-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.scroll-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* KPI */
+.kpi {
+    color: #22c55e;
+    font-size: 2rem;
+    font-weight: bold;
+}
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HERO WITH PARALLAX -->
+    <section class="hero">
+        <div class="parallax-bg"></div>
+    
+        <div class="container text-center">
+    
+            <img src="images/profile.png" class="profile-img mb-4">
+    
+            <!-- MORPHING TEXT -->
+            <h1 id="morphText" class="display-4 fw-bold">
+                I Turn Data Into <span class="highlight">Revenue</span>
+            </h1>
+    
+            <p class="mt-3 text-muted">
+                Customer & Revenue Analytics Specialist
+            </p>
+    
+        </div>
+    </section>
+    
+    
+    <!-- STORY SECTIONS -->
+    <section class="section text-center">
+        <h2 class="scroll-text">Data without direction is noise.</h2>
+    </section>
+    
+    <section class="section text-center bg-dark">
+        <h2 class="scroll-text">Insights without execution are useless.</h2>
+    </section>
+    
+    <section class="section text-center">
+        <h2 class="scroll-text">I bridge that gap.</h2>
+    </section>
+    
+    
+    <!-- KPI -->
+    <section class="section text-center bg-dark">
+        <div class="container">
+            <h2>Proven Impact</h2>
+    
+            <div class="row mt-5">
+    
+                <div class="col-md-3">
+                    <div class="kpi">+18%</div>
+                    <p>Revenue Growth</p>
+                </div>
+    
+                <div class="col-md-3">
+                    <div class="kpi">-60%</div>
+                    <p>Reporting Time</p>
+                </div>
+    
+                <div class="col-md-3">
+                    <div class="kpi">+42%</div>
+                    <p>Efficiency</p>
+                </div>
+    
+                <div class="col-md-3">
+                    <div class="kpi">1M+</div>
+                    <p>Records</p>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- CTA -->
+    <section class="section text-center">
+        <h2>Let’s Build Something Impactful</h2>
+        <a href="contact.html" class="btn btn-success mt-3">Work With Me</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center p-3">
+        © Senior Portfolio 2026
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        /* =========================
+           INIT (SAFE LOAD)
+        ========================= */
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* =========================
+               TEXT MORPHING (FIXED)
+            ========================= */
+            const morphText = document.getElementById("morphText");
+
+            const phrases = [
+                "Revenue",
+                "Growth",
+                "Decisions",
+                "Impact"
+            ];
+
+            let index = 0;
+
+            window.addEventListener("scroll", () => {
+                const newIndex = Math.floor(window.scrollY / 250) % phrases.length;
+
+                if (newIndex !== index) {
+                    index = newIndex;
+
+                    morphText.innerHTML = `
+                    I Turn Data Into <span class="highlight">${phrases[index]}</span>
+                `;
+                }
+            });
+
+
+            /* =========================
+               PARALLAX (SAFE)
+            ========================= */
+            const bg = document.querySelector(".parallax-bg");
+
+            if (bg) {
+                window.addEventListener("scroll", () => {
+                    let offset = window.scrollY;
+                    bg.style.transform = `translateY(${offset * 0.3}px)`;
+                });
+            }
+
+
+            /* =========================
+               SCROLL REVEAL (FIXED)
+            ========================= */
+            const texts = document.querySelectorAll(".scroll-text");
+
+            function revealText() {
+                texts.forEach(el => {
+                    const top = el.getBoundingClientRect().top;
+
+                    if (top < window.innerHeight - 100) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", revealText);
+            revealText();
+
+        });
+    </script>
+
+</body>
+
+</html>

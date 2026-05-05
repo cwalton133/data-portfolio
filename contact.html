@@ -6,11 +6,28 @@
     <title>Contact | Charles Walton</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXX');
+    </script>
+     
+        <!-- Clarity  -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/YOUR_ID";
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "YOUR_ID");
+    </script>
 
     <style>
         body {
@@ -103,7 +120,8 @@
                     <li><a class="nav-link" href="experience.html">Experience</a></li>
                     <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                     <li><a class="nav-link" href="testimonials.html">Testimonials</a></li>
-                    <li><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li><a class="nav-link" href="analytics.html">Analytics</a></li>
+                    <li><a class="nav-link active" href="#">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -119,17 +137,19 @@
 
             <!-- SOCIAL ICONS -->
             <div class="mt-4">
-                <a href="https://linkedin.com/in/cwalton1335" target="_blank" class="social-btn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+            <a href="https://linkedin.com/in/cwalton1335" onclick="trackClick('LinkedIn')" target="_blank" class="social-btn">
+                <i class="fab fa-linkedin"></i>
+            </a>
 
-                <a href="https://github.com/cwalton133" target="_blank" class="social-btn">
-                    <i class="fab fa-github"></i>
-                </a>
 
-                <a href="https://xing.com/cwalton1335" target="_blank" class="social-btn">
-                    <i class="fab fa-xing"></i>
-                </a>
+            <a href="https://github.com/cwalton133" onclick="trackClick('GitHub')" target="_blank" class="social-btn">
+                <i class="fab fa-github"></i>
+            </a>
+
+          
+            <a href="https://xing.com/cwalton1335" onclick="trackClick('Xing')" target="_blank" class="social-btn">
+                <i class="fab fa-xing"></i>
+            </a>
             </div>
         </div>
     </section>
@@ -206,7 +226,7 @@
             <h2>Need fast response?</h2>
             <p>Book a quick 15-minute strategy call.</p>
 
-            <a href="https://calendly.com/YOUR_LINK" class="btn btn-outline-light">
+            <a href="https://calendly.com/YOUR_LINK" onclick="trackClick('Calendly Booking')" class="btn btn-outline-light">
                 Book a Call
             </a>
 
@@ -255,6 +275,16 @@
             btn.innerHTML = "Send Message 🚀";
             btn.disabled = false;
         });
+        gtag('event', 'contact_form_submit', {
+                event_category: 'engagement',
+                event_label: 'Contact Form'
+            });
+            function trackClick(platform) {
+                    gtag('event', 'social_click', {
+                        event_category: 'engagement',
+                        event_label: platform
+                    });
+                }
     </script>
 
 </body>

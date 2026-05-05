@@ -1,56 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Intro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/main.js"></script>
+    <meta charset="UTF-8">
+    <title>Intro - Charles Walton</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        body {
+            background: #0b0f19;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .hero-intro {
+            background: linear-gradient(135deg, #0b0f19, #111827);
+            text-align: center;
+        }
+
+        .hero-intro h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .hero-intro p {
+            color: #9ca3af;
+            font-size: 1.2rem;
+        }
+
+        .highlight {
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 15px;
+        }
+
+        .badge-custom {
+            background: #22c55e;
+            color: black;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        .profile-img {
+            width: 180px;
+            border-radius: 50%;
+            border: 4px solid #22c55e;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            background: #22c55e;
+            color: black;
+            font-weight: 600;
+        }
+
+        .cta-btn:hover {
+            background: #16a34a;
+        }
+    </style>
+
 </head>
 
 <body>
+
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">Senior Analyst</a>
-    
+
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+
             <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav ms-auto">
                     <li><a class="nav-link" href="index.html">Home</a></li>
-                    <li><a class="nav-link" href="intro.html">Intro</a></li>
+                    <li><a class="nav-link active" href="#">Intro</a></li>
                     <li><a class="nav-link" href="skills.html">Skills</a></li>
                     <li><a class="nav-link" href="experience.html">Experience</a></li>
                     <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li><a class="nav-link" href="projects.html">Projects</a></li>
                     <li><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                    <li><a class="nav-link" href="analytics.html">Analytics</a></li>
                     <li><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Title section before About Me -->
-    <section class="section text-center" style="padding: 2em; max-width: 800px; margin: auto;">
-        <h1 style="margin-bottom: 0.5em;">I Turn Data Into Revenue & Growth</h1>
-        <h2 style="margin-bottom: 0.5em;"></h2> Customer & Revenue Analytics Specialist </h2>
+    <!-- HERO INTRO -->
+    <section class="section hero-intro">
+        <div class="container" data-aos="fade-up">
+
+            <!-- YOUR PHOTO -->
+            <img src="images/profile.png" class="profile-img" alt="Profile Photo">
+
+            <h1>I Turn Data Into <span class="highlight">Revenue & Growth</span></h1>
+
+            <p class="mt-3">
+                Customer & Revenue Analytics Specialist delivering high-impact insights,
+                fast execution, and measurable business outcomes.
+            </p>
+
+            <div class="mt-4">
+                <a href="portfolio.html" class="btn cta-btn me-2">View My Work</a>
+                <a href="cv/your-cv.pdf" class="btn btn-outline-light" download>Download ATS-Optimized Resume</a>
+            </div>
+
+        </div>
     </section>
 
-    <!-- About Me section -->
-    <section class="section text-center" style="padding: 2em; max-width: 800px; margin: auto;">
-        <h2 style="margin-bottom: 1em;">About Me</h2>
-        <p style="font-size: 1.1em; line-height: 1.6;">
-            I am an experienced data analyst specializing in scalable analytics, artificial intelligence systems, and
-            business intelligence dashboards. My focus is on delivering insights that empower organizations to optimize
-            their operations, enhance decision-making, and drive sustainable growth.
-        </p>
+    <!-- VALUE PROPOSITION -->
+    <section class="section">
+        <div class="container">
+
+            <div class="row text-center">
+
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="card p-4 h-100">
+                        <h4>⚡ Fast Execution</h4>
+                        <p>
+                            I deliver high-quality analytics solutions <span class="highlight">rapidly</span>,
+                            helping businesses move from data to decisions in record time.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card p-4 h-100">
+                        <h4>📊 Business Impact</h4>
+                        <p>
+                            My work directly drives results — including
+                            <span class="highlight">+18% revenue growth</span> and
+                            <span class="highlight">-60% reporting time</span>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card p-4 h-100">
+                        <h4>🤖 AI + Prompt Engineering</h4>
+                        <p>
+                            I don’t just use AI — I <span class="highlight">engineer prompts strategically</span>
+                            to extract real value, automate workflows, and enhance decision-making.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </section>
 
-    <footer class="footer" style="text-align: center; padding: 1em 0;">© Senior Portfolio 2026</footer>
+    <!-- ABOUT STORY -->
+    <section class="section bg-dark">
+        <div class="container">
+
+            <h2 class="mb-4 text-center">My Approach</h2>
+
+            <div class="row">
+
+                <div class="col-md-6" data-aos="fade-right">
+                    <p>
+                        I specialize in transforming raw, complex data into actionable insights that
+                        drive real business outcomes. My approach is not just technical — it is deeply
+                        aligned with business goals such as growth, retention, and operational efficiency.
+                    </p>
+
+                    <p>
+                        I combine <span class="highlight">SQL, Python, Power BI, and AI</span> to design
+                        scalable analytics solutions that empower stakeholders to make faster, smarter decisions.
+                    </p>
+                </div>
+
+                <div class="col-md-6" data-aos="fade-left">
+                    <p>
+                        With experience across finance, retail, and media industries, I understand how to
+                        adapt analytics strategies to different business environments.
+                    </p>
+
+                    <p>
+                        My strength lies in bridging the gap between <span class="highlight">data and business
+                            value</span> —
+                        ensuring insights are not just delivered, but actually used.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILL TAGS -->
+    <section class="section text-center">
+        <div class="container">
+
+            <h2 class="mb-4">Core Expertise</h2>
+
+            <span class="badge badge-custom">SQL</span>
+            <span class="badge badge-custom">Python</span>
+            <span class="badge badge-custom">Power BI</span>
+            <span class="badge badge-custom">Tableau</span>
+            <span class="badge badge-custom">ETL Pipelines</span>
+            <span class="badge badge-custom">Data Warehousing</span>
+            <span class="badge badge-custom">AI Prompt Engineering</span>
+            <span class="badge badge-custom">Customer Analytics</span>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section text-center bg-dark">
+        <div class="container">
+
+            <h2 class="mb-3">Let’s Build Something Impactful</h2>
+
+            <p class="mb-4">
+                If you're looking for a data analyst who delivers fast, thinks strategically,
+                and drives measurable results — let's talk.
+            </p>
+
+            <a href="contact.html" class="btn cta-btn">Contact Me</a>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer text-center py-3">
+        © Senior Portfolio 2026
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+
 </body>
 
 </html>
