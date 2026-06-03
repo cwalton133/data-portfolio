@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Walton | Financial & Revenue Analytics Consultant</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #020617;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar {
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 14px 0;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white !important;
+        }
+
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid #22c55e;
+            box-shadow: 0 0 18px rgba(34, 197, 94, 0.4);
+        }
+
+        .nav-link {
+            color: #cbd5e1 !important;
+            margin-left: 10px;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #22c55e !important;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.75),
+                    rgba(0, 0, 0, 0.82)),
+                url('images/data-banner.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(34, 197, 94, 0.12);
+            filter: blur(120px);
+            top: -100px;
+            right: -100px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(59, 130, 246, 0.12);
+            filter: blur(120px);
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+        }
+
+        .badge-top {
+            background: rgba(34, 197, 94, 0.12);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .hero h2 {
+            color: #22c55e;
+            font-weight: 700;
+            margin-bottom: 20px;
+            min-height: 55px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #22c55e;
+            box-shadow: 0 0 40px rgba(34, 197, 94, 0.55);
+            margin-bottom: 35px;
+            transition: 0.4s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .btn-main {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border: none;
+            color: #000;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.35);
+            color: black;
+        }
+
+        .btn-outline-custom {
+            border: 1px solid #334155;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-outline-custom:hover {
+            background: #22c55e;
+            color: black;
+            border-color: #22c55e;
+        }
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .section-subtitle {
+            color: #94a3b8;
+            max-width: 800px;
+            margin: auto;
+            font-size: 1rem;
+        }
+
+        /* =========================
+           KPI CARDS
+        ========================== */
+
+        .kpi-card {
+            background: linear-gradient(145deg, #111827, #0f172a);
+            border-radius: 24px;
+            padding: 35px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            height: 100%;
+        }
+
+        .kpi-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(135deg,
+                    rgba(34, 197, 94, 0.4),
+                    transparent,
+                    rgba(59, 130, 246, 0.3));
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .kpi-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto auto 20px auto;
+            background: rgba(34, 197, 94, 0.12);
+            color: #22c55e;
+            font-size: 1.7rem;
+        }
+
+        .kpi-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #22c55e;
+            margin-bottom: 8px;
+        }
+
+        .kpi-label {
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        /* =========================
+           DASHBOARD
+        ========================== */
+
+        .dashboard-wrapper {
+            background: linear-gradient(145deg, #111827, #0f172a);
+            border-radius: 30px;
+            padding: 35px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .dashboard-panel {
+            background: #0f172a;
+            padding: 25px;
+            border-radius: 20px;
+            height: 100%;
+        }
+
+        .dashboard-panel h5 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .dash-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: #111827;
+            color: white;
+            margin-bottom: 12px;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .dash-btn:hover,
+        .dash-btn.active {
+            background: #22c55e;
+            color: black;
+        }
+
+        .dashboard-card {
+            background: #0b1220;
+            border-radius: 20px;
+            padding: 25px;
+            height: 100%;
+        }
+
+        .insight-box {
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 14px;
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.15);
+            color: #d1fae5;
+        }
+
+        /* =========================
+           STATS BAR
+        ========================== */
+
+        .mini-stat {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .mini-stat h4 {
+            color: #22c55e;
+            font-weight: 800;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: #94a3b8;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media(max-width: 768px) {
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .dashboard-wrapper {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" class="logo-img" alt="Logo">
+                Charles Walton Analytics
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="intro.html">Intro</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="skills.html">Skills</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="experience.html">Experience</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="analytics.html">Analytics</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonials.html">Testimonials</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero text-center">
+
+        <div class="container hero-content">
+
+            <div class="badge-top">
+                AI • Analytics • Revenue Intelligence • BI Engineering
+            </div>
+
+            <div>
+                <img src="images/profile.png" class="profile-img" alt="Charles Walton">
+            </div>
+
+            <h1>
+                Charles Walton
+            </h1>
+
+            <h2 id="typing"></h2>
+
+            <p class="mb-5">
+                Customer & Revenue Analytics Specialist helping organizations increase retention,
+                optimize performance, automate reporting systems, and turn data into measurable growth.
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+
+                <a href="cv/my-cv.pdf" class="btn btn-main">
+                    Download Resume
+                </a>
+
+                <a href="portfolio.html" class="btn btn-outline-custom">
+                    View Portfolio
+                </a>
+
+                <a href="contact.html" class="btn btn-outline-custom">
+                    Hire Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- KPI SECTION -->
+    <section>
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="section-title">
+                    Proven Business Impact
+                </h2>
+
+                <p class="section-subtitle">
+                    Delivering scalable analytics systems, revenue intelligence,
+                    automation frameworks, and executive dashboards across finance,
+                    consulting, retail, and enterprise operations.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-3" data-aos="fade-up">
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <div class="kpi-number" data-target="18">0</div>
+
+                        <div class="kpi-label">
+                            Revenue Growth
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div class="kpi-number" data-target="60">0</div>
+
+                        <div class="kpi-label">
+                            Reporting Time Reduced
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+
+                        <div class="kpi-number" data-target="42">0</div>
+
+                        <div class="kpi-label">
+                            Efficiency Increase
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <div class="kpi-number" data-target="1000000">0</div>
+
+                        <div class="kpi-label">
+                            Records Processed
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INTERACTIVE DASHBOARD -->
+    <section>
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="section-title">
+                    Interactive Analytics Dashboard
+                </h2>
+
+                <p class="section-subtitle">
+                    Live business intelligence simulation powered by Chart.js and external data integration.
+                </p>
+
+            </div>
+
+            <div class="dashboard-wrapper">
+
+                <div class="row g-4">
+
+                    <!-- LEFT -->
+                    <div class="col-lg-3">
+
+                        <div class="dashboard-panel">
+
+                            <h5>
+                                Dashboard Insights
+                            </h5>
+
+                            <button class="dash-btn active" onclick="showInsight('revenue', this)">
+                                Revenue Analytics
+                            </button>
+
+                            <button class="dash-btn" onclick="showInsight('efficiency', this)">
+                                Efficiency Metrics
+                            </button>
+
+                            <button class="dash-btn" onclick="showInsight('operations', this)">
+                                Operations Intelligence
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT -->
+                    <div class="col-lg-9">
+
+                        <div class="dashboard-card">
+
+                            <canvas id="dashboardChart"></canvas>
+
+                            <div class="insight-box" id="insightText">
+                                Revenue increased by 18% through customer intelligence and reporting automation.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- QUICK STATS -->
+    <section>
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="mini-stat">
+
+                        <h4>SQL • Python • Power BI</h4>
+
+                        <p class="text-light">
+                            Advanced analytics engineering stack
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="mini-stat">
+
+                        <h4>AI Prompt Engineering</h4>
+
+                        <p class="text-light">
+                            Strategic AI usage for enterprise productivity
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="mini-stat">
+
+                        <h4>FAANG-Level Portfolio</h4>
+
+                        <p class="text-light">
+                            Modern recruiter-focused presentation system
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Charles Walton • Financial & Revenue Analytics Consultant
+    </footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        /* =========================
+           TYPING EFFECT
+        ========================== */
+
+        const typingText = [
+            "I Turn Data Into Revenue & Growth",
+            "I Build Executive Analytics Dashboards",
+            "I Transform Data Into Business Decisions",
+            "I Deliver AI-Driven Business Intelligence"
+        ];
+
+        let textIndex = 0;
+        let charIndex = 0;
+
+        const typingElement = document.getElementById("typing");
+
+        function typeEffect() {
+
+            if (charIndex < typingText[textIndex].length) {
+
+                typingElement.innerHTML += typingText[textIndex].charAt(charIndex);
+
+                charIndex++;
+
+                setTimeout(typeEffect, 45);
+
+            } else {
+
+                setTimeout(eraseEffect, 2000);
+
+            }
+        }
+
+        function eraseEffect() {
+
+            if (charIndex > 0) {
+
+                typingElement.innerHTML =
+                    typingText[textIndex].substring(0, charIndex - 1);
+
+                charIndex--;
+
+                setTimeout(eraseEffect, 20);
+
+            } else {
+
+                textIndex++;
+
+                if (textIndex >= typingText.length) {
+                    textIndex = 0;
+                }
+
+                setTimeout(typeEffect, 400);
+
+            }
+        }
+
+        typeEffect();
+
+        /* =========================
+           KPI COUNTERS
+        ========================== */
+
+        const counters = document.querySelectorAll(".kpi-number");
+
+        const counterObserver = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    const counter = entry.target;
+                    const target = +counter.getAttribute("data-target");
+
+                    let count = 0;
+
+                    const speed = target / 100;
+
+                    const updateCounter = () => {
+
+                        count += speed;
+
+                        if (count < target) {
+
+                            if (target >= 1000000) {
+
+                                counter.innerText =
+                                    (count / 1000000).toFixed(1) + "M+";
+
+                            } else {
+
+                                counter.innerText =
+                                    "+" + Math.floor(count) + "%";
+
+                            }
+
+                            requestAnimationFrame(updateCounter);
+
+                        } else {
+
+                            if (target >= 1000000) {
+
+                                counter.innerText = "1M+";
+
+                            } else {
+
+                                counter.innerText = "+" + target + "%";
+
+                            }
+
+                        }
+
+                    };
+
+                    updateCounter();
+
+                    counterObserver.unobserve(counter);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.5
+        });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        /* =========================
+           DASHBOARD
+        ========================== */
+
+        let chart;
+
+        const chartData = {
+
+            revenue: {
+                label: "Revenue Growth",
+                values: [12, 15, 18, 22, 28, 35],
+                insight: "Revenue increased by 18% through customer intelligence and analytics optimization."
+            },
+
+            efficiency: {
+                label: "Efficiency Improvement",
+                values: [10, 18, 25, 36, 48, 60],
+                insight: "Automated workflows reduced reporting turnaround time by 60%."
+            },
+
+            operations: {
+                label: "Records Processed",
+                values: [120000, 240000, 400000, 650000, 800000, 1000000],
+                insight: "Data pipelines scaled to process over 1 million enterprise records."
+            }
+
+        };
+
+        function loadChart(type) {
+
+            const ctx = document.getElementById("dashboardChart");
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+
+                type: "line",
+
+                data: {
+
+                    labels: [
+                        "Jan",
+                        "Feb",
+                        "Mar",
+                        "Apr",
+                        "May",
+                        "Jun"
+                    ],
+
+                    datasets: [{
+
+                        label: chartData[type].label,
+
+                        data: chartData[type].values,
+
+                        borderColor: "#22c55e",
+
+                        backgroundColor: "rgba(34,197,94,0.15)",
+
+                        fill: true,
+
+                        tension: 0.4,
+
+                        borderWidth: 3,
+
+                        pointBackgroundColor: "#22c55e",
+
+                        pointRadius: 5
+
+                    }]
+
+                },
+
+                options: {
+
+                    responsive: true,
+
+                    plugins: {
+
+                        legend: {
+                            labels: {
+                                color: "#fff"
+                            }
+                        }
+
+                    },
+
+                    scales: {
+
+                        x: {
+                            ticks: {
+                                color: "#cbd5e1"
+                            },
+                            grid: {
+                                color: "rgba(255,255,255,0.05)"
+                            }
+                        },
+
+                        y: {
+                            ticks: {
+                                color: "#cbd5e1"
+                            },
+                            grid: {
+                                color: "rgba(255,255,255,0.05)"
+                            }
+                        }
+
+                    }
+
+                }
+
+            });
+
+            document.getElementById("insightText").innerHTML =
+                chartData[type].insight;
+
+        }
+
+        function showInsight(type, btn) {
+
+            document.querySelectorAll(".dash-btn").forEach(button => {
+                button.classList.remove("active");
+            });
+
+            btn.classList.add("active");
+
+            loadChart(type);
+
+        }
+
+        loadChart("revenue");
+
+    </script>
+
+</body>
+
+</html>
