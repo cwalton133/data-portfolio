@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications | Charles Walton</title>
+
+```
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+    body{
+        background:#0b0f19;
+        color:#fff;
+        font-family:Inter,sans-serif;
+    }
+
+    .navbar{
+        background:#0b0f19;
+    }
+
+    .hero{
+        padding:100px 0;
+        text-align:center;
+        background:linear-gradient(135deg,#0b0f19,#111827);
+    }
+
+    .hero h1{
+        font-weight:700;
+    }
+
+    .highlight{
+        color:#22c55e;
+    }
+
+    .section{
+        padding:80px 0;
+    }
+
+            /* STATS */
+        .stat-card {
+            background: #111827;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #1f2937;
+            transition: 0.4s;
+        }
+
+    .cert-card{
+        background:#111827;
+        border:1px solid #1f2937;
+        border-radius:20px;
+        transition:.4s;
+        overflow:hidden;
+        height:100%;
+    }
+
+    .cert-card:hover{
+        transform:translateY(-10px);
+        box-shadow:0 20px 50px rgba(34,197,94,.15);
+    }
+
+    .cert-logo{
+        height:90px;
+        object-fit:contain;
+        margin-bottom:20px;
+    }
+
+    .btn-main{
+        background:#22c55e;
+        border:none;
+        color:#fff;
+    }
+
+    .btn-main:hover{
+        background:#16a34a;
+    }
+
+    .timeline{
+        position:relative;
+        margin-top:50px;
+    }
+
+    .timeline::before{
+        content:"";
+        position:absolute;
+        left:50%;
+        top:0;
+        width:2px;
+        height:100%;
+        background:#22c55e;
+    }
+
+    .timeline-item{
+        position:relative;
+        width:50%;
+        padding:20px 40px;
+    }
+
+    .timeline-item:nth-child(odd){
+        left:0;
+        text-align:right;
+    }
+
+    .timeline-item:nth-child(even){
+        left:50%;
+    }
+
+    .timeline-dot{
+        position:absolute;
+        width:18px;
+        height:18px;
+        background:#22c55e;
+        border-radius:50%;
+        top:30px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot{
+        right:-9px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot{
+        left:-9px;
+    }
+
+    .timeline-content{
+        background:#111827;
+        padding:20px;
+        border-radius:15px;
+        border:1px solid #1f2937;
+    }
+
+    .badge-verified{
+        background:#22c55e;
+    }
+
+    .badge-progress{
+        background:#f59e0b;
+        color:#000;
+    }
+
+    footer{
+        background:#111827;
+        padding:25px;
+        text-align:center;
+    }
+
+    @media(max-width:768px){
+
+        .timeline::before{
+            left:20px;
+        }
+
+        .timeline-item{
+            width:100%;
+            left:0!important;
+            text-align:left!important;
+            padding-left:60px;
+        }
+
+        .timeline-dot{
+            left:12px!important;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- NAVIGATION -->
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Senior Analyst</a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="intro.html">Intro</a></li>
+                <li><a class="nav-link" href="skills.html">Skills</a></li>
+                <li><a class="nav-link" href="experience.html">Experience</a></li>
+                <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                <li><a class="nav-link active" href="#">Certification</a></li>
+                <li><a class="nav-link" href="analytics.html">Analytics</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>
+            Education &
+            <span class="highlight">Professional Certifications</span>
+        </h1>
+
+        <p class="lead mt-3">
+            Continuous learning, professional growth,
+            and commitment to excellence in Data Analytics,
+            Artificial Intelligence, and Computer Science.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <p>Projects Delivered</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <p>Certifications</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">1M+</div>
+                    <p>Records Analyzed</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CERTIFICATIONS -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="text-center mb-5">
+            Professional Credentials
+        </h2>
+
+        <div class="row g-4">
+
+            <!-- UNIVERSITY OF THE PEOPLE -->
+
+            <div class="col-lg-6">
+
+                <div class="cert-card p-4">
+
+                    <img src="images/uopeople-logo.png"
+                        class="cert-logo">
+
+                    <h3>
+                        Bachelor Degree in Computer Science
+                    </h3>
+
+                    <span class="badge badge-progress">
+                        In Progress
+                    </span>
+
+                    <p class="mt-3">
+
+                        Currently studying Computer Science
+                        with a focus on software systems,
+                        digital technologies, programming,
+                        and modern computing principles.
+
+                    </p>
+
+                    <p>
+                        <strong>
+                            University of the People
+                        </strong><br>
+                        2025 – 2027
+                    </p>
+
+                    <div class="mt-3">
+
+                        <button
+                            class="btn btn-main"
+                            onclick="previewCertificate('certificates/uopeople-enrollment.pdf')">
+
+                            <i class="fas fa-eye"></i>
+                            View Proof
+
+                        </button>
+
+                        <a href="certificates/uopeople-enrollment.pdf"
+                            download
+                            class="btn btn-outline-light">
+
+                            <i class="fas fa-download"></i>
+                            Download
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- KIRON -->
+
+            <div class="col-lg-6">
+
+                <div class="cert-card p-4">
+
+                    <img src="images/kiron-logo.png"
+                        class="cert-logo">
+
+                    <h3>
+                        Boost Your Career with AI
+                    </h3>
+
+                    <span class="badge badge-verified">
+                        Verified
+                    </span>
+
+                    <p class="mt-3">
+
+                        Professional training focused on
+                        AI productivity tools, prompt engineering,
+                        digital workplace innovation,
+                        and practical AI applications.
+
+                    </p>
+
+                    <p>
+                        <strong>
+                            Kiron Open Higher Education
+                        </strong>
+                    </p>
+
+                    <div class="mt-3">
+
+                        <button
+                            class="btn btn-main"
+                            onclick="previewCertificate('certificates/kiron-ai-certificate.pdf')">
+
+                            <i class="fas fa-eye"></i>
+                            Preview
+
+                        </button>
+
+                        <a href="certificates/kiron-ai-certificate.pdf"
+                            download
+                            class="btn btn-outline-light">
+
+                            <i class="fas fa-download"></i>
+                            Download
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LEARNING JOURNEY -->
+
+<!-- LEARNING TIMELINE -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="text-center mb-5">
+            Continuous Learning Journey
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h5>2025 – 2027</h5>
+
+                    <p>
+                        Bachelor Degree in Computer Science
+                        at University of the People.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h5>2025</h5>
+
+                    <p>
+                        Completed Kiron AI Professional Development Program.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="section text-center">
+
+    <div class="container">
+
+        <h2>
+            Learning Never Stops
+        </h2>
+
+        <p>
+            I continuously invest in developing modern analytics,
+            AI, and technology skills to deliver greater value
+            to organizations worldwide.
+        </p>
+
+        <a href="contact.html" class="btn btn-success btn-lg mt-3">
+            Let's Work Together
+        </a>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- PDF MODAL -->
+
+<div class="modal fade"
+    id="certificateModal"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-xl">
+
+        <div class="modal-content bg-dark">
+
+            <div class="modal-header border-secondary">
+
+                <h5 class="modal-title text-white">
+                    Certificate Preview
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <iframe
+                    id="certificateFrame"
+                    width="100%"
+                    height="700"
+                    style="border:none;">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Charles Walton | Professional Development
+
+</footer>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+    function previewCertificate(pdfFile){
+
+        document.getElementById(
+            "certificateFrame"
+        ).src = pdfFile;
+
+        const modal =
+            new bootstrap.Modal(
+                document.getElementById(
+                    "certificateModal"
+                )
+            );
+
+        modal.show();
+    }
+
+</script>
+```
+
+</body>
+</html>
